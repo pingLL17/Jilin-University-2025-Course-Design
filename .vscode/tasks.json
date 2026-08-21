@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "cppbuild",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-finput-charset=UTF-8",
+                "-fexec-charset=UTF-8",
+                "-o",
+                "hospital.exe",
+                "common.cpp",
+                "models.cpp",
+                "storage.cpp",
+                "services.cpp",
+                "seed.cpp",
+                "ui.cpp",
+                "main.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "编译医疗管理系统（MinGW g++）"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "hospital.exe",
+            "dependsOn": "build",
+            "group": "none",
+            "detail": "编译并运行医疗管理系统"
+        }
+    ]
+}
